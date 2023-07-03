@@ -1,0 +1,299 @@
+:root {
+    --mainbody: rgb(250, 250, 250);
+    --container: white;
+    --content: white;
+    --contentcolor: black;
+    --border: rgb(243, 243, 243)
+}
+
+.light-mode {
+    --mainbody: rgb(250, 250, 250);
+    --container: white;
+    --content: white;
+    --contentcolor: black;
+    --border: rgb(243, 243, 243)
+}
+
+.dark-mode {
+    --mainbody: hsl(207, 26%, 17%);
+    --container: hsl(209, 23%, 22%);
+    --content: hsl(209, 23%, 22%);
+    --contentcolor: white;
+    --contentcolor2: #6a727a;
+    --border: hsl(213.33333333333334, 9.677419354838712%, 18.23529411764706%);
+}
+
+.app {
+    width: 100%;
+    background-color: var(--mainbody) !important;
+    background-color: rgb(250, 250, 250);
+    transition: all .9s linear;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+nav button {
+    border: none;
+    padding: 10px 30px;
+    background-color: transparent;
+    color: var(--contentcolor);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon {
+    font-size: 30px;
+}
+
+.cancel {
+    display: none;
+}
+
+nav {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--content);
+    align-items: center;
+    color: var(--contentcolor);
+    padding: 0 50px;
+    /* z-index: 1000; */
+
+}
+
+.input-field {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 30px 50px;
+}
+
+.first {
+    width: 100%;
+}
+
+.first input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--content);
+    color: var(--contentcolor);
+    box-shadow: 0px 4px 4px var(--border);
+}
+
+.second {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+select {
+    border-radius: 10px;
+    border: none;
+    padding: 12px;
+    width: 150px;
+    text-align: left !important;
+    background-color: var(--content);
+    color: var(--contentcolor);
+    box-shadow: 0px 4px 4px var(--border);
+}
+
+option {
+    border-radius: 5px;
+}
+
+.enclosure {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 50px;
+    row-gap: 40px;
+    padding: 30px 50px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 4px var(--border);
+    background-color: var(--container);
+}
+
+img {
+    width: 100%;
+    height: 30vh;
+    cursor: pointer;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 20px;
+    background-color: var(--content);
+    color: var(--contentcolor);
+}
+
+.about {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.positioned button {
+    position: absolute;
+    top: 17%;
+    left: 6%;
+    background-color: var(--content);
+    color: var(--contentcolor);
+    padding: 10px 25px;
+    border: none;
+    box-shadow: 0px 4px 4px var(--border);
+}
+
+.details-wrapper {
+    padding: 0 80px;
+    background-color: var(--mainbody);
+    width: 100%;
+    min-height: 80vh !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.btn-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.close-button {
+    background-color: var(--content);
+    color: var(--contentcolor);
+    padding: 10px 25px;
+    border: none;
+    box-shadow: 0px 4px 4px var(--border);
+}
+
+.card {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.picture {
+    width: 100%;
+    height: 50vh;
+}
+
+.picture img {
+    height: 50vh;
+}
+
+.content-after {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 50vh;
+}
+
+.details-wrapper h2 {
+    color: var(--contentcolor);
+}
+
+.about-after {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    color: var(--contentcolor2);
+}
+
+span {
+    color: var(--contentcolor) !important;
+}
+
+.one,
+.two {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.base {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    color: var(--contentcolor);
+    margin-top: 50px;
+    background-color: var(--mainbody);
+}
+
+.base div {
+    color: var(--contentcolor2);
+    background-color: var(--content);
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    .enclosure {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .details-wrapper{
+        padding: 0 20px;
+    }
+    .input-field {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .about-after{
+        flex-direction: column;
+    }
+    .card {
+        flex-direction: column;
+        padding-bottom: 37px;
+    }
+    .base{
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        padding-top: 25px;
+    }
+    .second {
+        justify-content: flex-start;
+    }
+
+    nav {
+        padding: 0 10px;
+        z-index: 1000;
+    }
+
+}
+
+@media screen and (max-width: 950px) {
+    .enclosure {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .enclosure {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
