@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import './Style.css';
 
 
-function CountryDetails({ country, closeButton}) {
+function CountryDetails({ country, closeButton }) {
 
     const [selectedDetails, setSelectedDetails] = useState();
 
     if (!country) {
-      return null;
+        return null;
     }
-    
+
     const handleChangeDetails = (border) => {
         alert(border)
     }
@@ -42,7 +42,20 @@ function CountryDetails({ country, closeButton}) {
                         </div>
                         <div className="base">
                             <p><span>Border Countries: </span></p>
-                            <div>{country.borders.map(border => (<div onClick={()=> handleChangeDetails(border)}>{border}</div>))}</div>
+                            <div>
+                                {/* {country.borders.map(border => (<div onClick={()=> handleChangeDetails(border)}>{border}</div>))} */}
+                                {country.borders.map(borderCode => {
+                                    const borderCountry = countryData.find(country => country.alpha3Code === borderCode);
+                                    if (borderCountry) {
+                                        return (
+                                            <BorderCountryButton key={borderCountry.alpha3Code} onClick={() => handleBorderCountryClick(borderCountry)}>
+                                                {borderCountry.name}
+                                            </BorderCountryButton>
+                                        );
+                                    }
+                                    return null;
+                                })}
+                            </div>
                         </div>
                     </div>
                 </div>
