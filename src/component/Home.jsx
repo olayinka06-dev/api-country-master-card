@@ -25,6 +25,8 @@ function Home() {
     setSelectedCountry(country);
     setToggle(true)
   };
+  const handleChangeCountryDetails = borderCountry => setSelectedCountry(borderCountry); // event handler for border country click
+
 
   const handleToggleMode = () => setIsDarkMode(prev => !prev);
   const handleCloseButtonClick = () => {
@@ -41,9 +43,6 @@ function Home() {
     return true;
   });
 
-  // const handleChangeDetails = (border) => {
-  //   alert(border);
-  // }
 
   return (
     <div className={ `app ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
@@ -52,7 +51,7 @@ function Home() {
         toggle ? "" : (<SearchInput value={searchInput} onChange={handleSearchInput} selectValue={selectInput} onSelectChange={handleSelectInput} />)
       }
       {
-        toggle ? (<CountryDetails country={selectedCountry} closeButton={handleCloseButtonClick} />) : (<Props2 countries={filteredCountries} onClick={handleCountryClick} />)
+        toggle ? (<CountryDetails handleBorderCountryClick={handleChangeCountryDetails} country={selectedCountry} closeButton={handleCloseButtonClick} />) : (<Props2 countries={filteredCountries} onClick={handleCountryClick} />)
       }
     </div>
   );
